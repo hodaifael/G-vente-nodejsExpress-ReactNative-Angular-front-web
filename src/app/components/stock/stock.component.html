@@ -1,0 +1,207 @@
+<body class="vertical-layout vertical-menu-modern content-detached-left-sidebar ecommerce-application navbar-floating footer-static   menu-collapsed" data-open="click" data-menu="vertical-menu-modern" data-col="content-detached-left-sidebar">
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+
+        <div style="margin-top:0px" class="content-wrapper">
+            <div class="row">
+                
+                <div class="col-12 col-md-2">
+                    <button type="button" routerLink="../checkout" style="width:150px;" class="btn bg-gradient-info mr-2 mb-1 ">Panier</button>
+                </div>
+            </div>
+            <div class="content-detached content-right">
+                <div class="content-body">
+                    <!-- Ecommerce Content Section Starts -->
+                   
+                    <!-- Ecommerce Content Section Starts -->
+                    <!-- background Overlay when sidebar is shown  starts-->
+                    <div class="shop-content-overlay"></div>
+                    <!-- background Overlay when sidebar is shown  ends-->
+
+                    <!-- Ecommerce Search Bar Starts -->
+                    <section id="ecommerce-searchbar">
+                        <div class="row mt-1">
+                            <div class="col-sm-12">
+                                <fieldset class="form-group position-relative">
+                                    <input type="text" class="form-control search-product" id="iconLeft5"  [(ngModel)]="search" (input)="searchByname()" placeholder="Search here">
+                                    <div class="form-control-position">
+                                        <i class="feather icon-search"></i>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Ecommerce Search Bar Ends -->
+
+                    <!-- Ecommerce Products Starts -->
+                    <section id="ecommerce-products" class="grid-view">
+                        <div *ngFor="let emp of products "  class="card ecommerce-card">
+                            <div class="card-content">
+                                <div class="item-img text-center">
+                                    <a href="app-ecommerce-details.html">
+                                                <img style="width:220px;height:220px;border-radius: 15px;" src="http://localhost:5000/assets/{{emp.image}}" alt="img-placeholder">
+                                        </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="item-wrapper">
+                                        <div class="item-rating">
+                                            
+                                        </div>
+                                        <div>
+                                            <h6 class="item-price">
+                                                {{ emp.prix }} €
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="item-name">
+                                        <a href="app-ecommerce-details.html">{{ emp.marque }}</a>
+                                    </div>
+                                    <div>
+                                        <p class="item-description">
+                                          {{ emp.description }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item-options text-center">
+                                    <div class="item-wrapper">
+                                       
+                                       
+                                    </div>
+                                  <div routerLink="../details/{{ emp.id }}" class="wishlist">
+                                        <i  class="fa fa-eye" aria-hidden="true"></i> <span>details</span>
+                                    </div>
+                                    <div (click)="addtocart(emp.id)" class="cart">
+                                        <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Add to cart</span> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </section>
+                    <!-- Ecommerce Products Ends -->
+
+                    <!-- Ecommerce Pagination Starts -->
+                 
+                    <!-- Ecommerce Pagination Ends -->
+
+                </div>
+            </div>
+            <div class="sidebar-detached sidebar-left">
+                <div class="sidebar">
+                    <!-- Ecommerce Sidebar Starts -->
+                    <div class="sidebar-shop" id="ecommerce-sidebar-toggler">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h6 class="filter-heading d-none d-lg-block">Filters</h6>
+                            </div>
+                        </div>
+                        <span class="sidebar-close-icon d-block d-md-none">
+                            <i class="feather icon-x"></i>
+                        </span>
+                        <div class="card">
+                            <div class="card-body">
+                               
+                                <!-- /Price Range -->
+                                <hr>
+                                <!-- Categories Starts -->
+                                <div id="product-categories">
+                                    <div class="product-category-title">
+                                        <h6 class="filter-title mb-1">Categories</h6>
+                                    </div>
+                                    <ul class="list-unstyled categories-list">
+                                        <li>
+                                            <span class="vs-radio-con vs-radio-primary py-25">
+                                                <input type="radio" name="category-filter" (click)='changefilter("all")' value="false" checked>
+                                                <span class="vs-radio">
+                                                    <span class="vs-radio--border"></span>
+                                                    <span class="vs-radio--circle"></span>
+                                                </span>
+                                                <span class="ml-50">All</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="vs-radio-con vs-radio-primary py-25">
+                                                <input type="radio" name="category-filter" (click)='changefilter("caract_tel")' value="false">
+                                                <span class="vs-radio">
+                                                    <span class="vs-radio--border"></span>
+                                                    <span class="vs-radio--circle"></span>
+                                                </span>
+                                                <span class="ml-50"> Tele</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="vs-radio-con vs-radio-primary py-25">
+                                                <input type="radio" name="category-filter" (click)='changefilter("Consoles de jeux")' value="false">
+                                                <span class="vs-radio">
+                                                    <span class="vs-radio--border"></span>
+                                                    <span class="vs-radio--circle"></span>
+                                                </span>
+                                                <span class="ml-50">Consoles de jeux</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="vs-radio-con vs-radio-primary py-25">
+                                                <input type="radio" name="category-filter" (click)='changefilter("Objets connectes")' value="false">
+                                                <span class="vs-radio">
+                                                    <span class="vs-radio--border"></span>
+                                                    <span class="vs-radio--circle"></span>
+                                                </span>
+                                                <span class="ml-50">Objets connectes</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="vs-radio-con vs-radio-primary py-25">
+                                                <input type="radio" name="category-filter" (click)='changefilter("Gros electroménagers")' value="false">
+                                                <span class="vs-radio">
+                                                    <span class="vs-radio--border"></span>
+                                                    <span class="vs-radio--circle"></span>
+                                                </span>
+                                                <span class="ml-50">Gros electroménagers</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="vs-radio-con vs-radio-primary py-25">
+                                                <input type="radio" name="category-filter" (click)='changefilter("Ordinateurs")' value="false">
+                                                <span class="vs-radio">
+                                                    <span class="vs-radio--border"></span>
+                                                    <span class="vs-radio--circle"></span>
+                                                </span>
+                                                <span class="ml-50">Ordinateurs</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="vs-radio-con vs-radio-primary py-25">
+                                                <input type="radio" name="category-filter" (click)='changefilter("Bricolage")' value="false">
+                                                <span class="vs-radio">
+                                                    <span class="vs-radio--border"></span>
+                                                    <span class="vs-radio--circle"></span>
+                                                </span>
+                                                <span class="ml-50"> Bricolage</span>
+                                            </span>
+                                        </li>
+                                        
+                                       
+
+                                    </ul>
+                                </div>
+                                <!-- Categories Ends -->
+                               
+                                
+                                <!-- Rating section Ends -->
+                                <hr>
+                                <!-- Clear Filters Starts -->
+                              
+                                <!-- Clear Filters Ends -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ecommerce Sidebar Ends -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>

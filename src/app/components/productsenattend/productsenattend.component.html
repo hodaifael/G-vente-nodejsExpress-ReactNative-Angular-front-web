@@ -1,0 +1,192 @@
+<body
+  class="
+    vertical-layout vertical-menu-modern
+    2-columns
+    ecommerce-application
+    navbar-floating
+    footer-static
+    menu-collapsed
+  "
+  data-open="click"
+  data-menu="vertical-menu-modern"
+  data-col="2-columns"
+>
+  <div class="app-content content">
+    <div style="margin-top: 0px" class="content-wrapper">
+      <div style="margin-top: 0px" class="content-body">
+        <div id="DataTables_Table_0_filter" class="dataTables_filter">
+          <label
+            ><input
+              type="search"
+              class="form-control"
+              style="font-size: 18px; width: 300px"
+              [(ngModel)]="search"
+              (input)="searchByname()"
+              placeholder=""
+              aria-controls="DataTables_Table_0"
+          /></label>
+        </div>
+        <form
+          action="#"
+          class="icons-tab-steps checkout-tab-steps wizard-circle"
+        >
+          <!-- Checkout Place order starts -->
+          <fieldset
+            style="margin-top: 60px"
+            class="checkout-step-1 px-0"
+            ng-if="products.length > 0"
+          >
+            <section id="place-order" class="list-view product-checkout">
+              <div class="checkout-items" ng-if="products.length > 0">
+                <div
+                  style="width: 1000px; margin-left: 60px"
+                  *ngFor="let emp of products"
+                  class="card ecommerce-card"
+                >
+                  <div class="card-content">
+                    <div class="item-img text-center">
+                      <a href="app-ecommerce-details.html">
+                        <img
+                          style="
+                            width: 200px;
+                            height: 200px;
+                            border-radius: 15px;
+                          "
+                          src="http://localhost:5000/assets/{{ emp.image }}"
+                          alt="img-placeholder"
+                        />
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <div class="item-name">
+                        <p class="item-company">
+                          <span class="company-name">Déscription :</span>
+                          {{ emp.description }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Marque :</span>
+                          {{ emp.marque }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name"
+                            >Caractéristiques téchniques :</span
+                          >
+                          {{ emp.caracteristiques_techniques }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Etat esthétique :</span>
+                          {{ emp.etat_esthetique }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Etat :</span>
+                          {{ emp.etat }}
+                        </p>
+                        <span></span><br />
+                        <div *ngIf="checkprix(emp.prix); else prixnull">
+                          <p class="item-company">
+                            <span class="company-name">Prix :</span>
+                            {{ emp.prix }}
+                          </p>
+                        </div>
+                        <ng-template #prixnull>
+                          <p class="item-company">
+                            <span class="company-name">Prix :</span> le prix
+                            n'est pas estime
+                          </p>
+                          <div
+                            id="DataTables_Table_0_filter"
+                            class="dataTables_filter"
+                          >
+                            <label
+                              ><input
+                                type="text"
+                                class="form-control"
+                                style="font-size: 18px; width: 300px"
+                                [(ngModel)]="prod.prixofficiel"
+                                placeholder="donne un prix office"
+                                aria-controls="DataTables_Table_0"
+                            /></label>
+                          </div>
+                          <div
+                            id="DataTables_Table_0_filter"
+                            class="dataTables_filter"
+                          >
+                            <label
+                              ><input
+                                type="text"
+                                class="form-control"
+                                style="font-size: 18px; width: 300px"
+                                [(ngModel)]="prod.prix"
+                                placeholder="donne un prix"
+                                aria-controls="DataTables_Table_0"
+                            /></label>
+                          </div>
+                          <div class="col-12">
+                            <button
+                              (click)="changeprix(emp.id)"
+                              class="btn btn-primary mr-1 mb-1"
+                            >
+                              update prix
+                            </button>
+                          </div>
+                        </ng-template>
+                        <span></span><br />
+                      </div>
+                    </div>
+                    <div class="item-options text-center">
+                      <div
+                        (click)="deleteProduct(emp.id)"
+                        style="
+                          margin-top: 5px;
+                          max-width: 150px;
+                          margin-left: 25px;
+                        "
+                        class="wishlist remove-wishlist"
+                      >
+                        <i class="feather icon-x align-middle"></i> Supprimer
+                      </div>
+                      <div class="remove-wishlist">
+                        <button
+                          type="button"
+                          (click)="adminvalide(emp)"
+                          style="width: 150px"
+                          class="btn bg-gradient-success mr-2 mb-1"
+                        >
+                          Valider
+                        </button>
+                      </div>
+                      <div class="remove-wishlist">
+                        <button
+                          type="button"
+                          routerLink="../singleproduct/{{ emp.id }}"
+                          style="width: 150px"
+                          class="btn bg-gradient-info mr-2 mb-1"
+                        >
+                          Contre Offre
+                        </button>
+                      </div>
+                      <div class="remove-wishlist">
+                        <button
+                          type="button"
+                          (click)="adminrefuser(emp.id)"
+                          style="width: 150px"
+                          class="btn bg-gradient-danger mr-2 mb-1"
+                        >
+                          Refuser
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

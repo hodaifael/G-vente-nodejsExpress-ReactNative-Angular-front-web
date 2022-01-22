@@ -1,0 +1,125 @@
+<div class="container-fluid">
+  <div style="top: 20px" class="app-content content">
+    <div class="row">
+      <div class="col-12 col-md-3"></div>
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Nouveau produit</h4>
+          </div>
+          <br />
+
+          <div class="card-content">
+            <div class="card-body">
+              <form class="form form-vertical" (ngSubmit)="insertProduct()">
+                <div class="form-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">Capacite</label>
+                        <select
+                          [(ngModel)]="prod.capacite"
+                          name="capacite"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="32">32G</option>
+                          <option value="64">64G</option>
+                          <option value="128">128G</option>
+                          <option value="256">256G</option>
+                          <option value="512">512G</option>
+                          <option value="1024">1T</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="email-id-vertical">Dimension</label>
+                            <select
+                              [(ngModel)]="prod.dimension"
+                              name="dimension"
+                              class="select2-theme form-control"
+                              id="select2-theme"
+                            >
+                              <option value="11,1 x 6,2 cm">
+                                11,1 x 6,2 cm
+                              </option>
+                              <option value="13,3 x 7,5 cm">
+                                13,3 x 7,5 cm
+                              </option>
+                              <option value="15,5 x 8,7 cm">
+                                15,5 x 8,7 cm
+                              </option>
+                              <option value="17,7 x 10 cm">17,7 x 10 cm</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">Caméra</label>
+                        <input
+                          type="number"
+                          [(ngModel)]="prod.camera"
+                          name="camera"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                          placeholder="pixel : "
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">Ecran</label>
+                        <select
+                          [(ngModel)]="prod.ecran"
+                          name="ecran"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="1440 x 2960">1440 x 2560</option>
+                          <option value="1080 x 1920">1080 x 1920</option>
+                          <option value="1440 x 2960">1440 x 2960</option>
+                          <option value="1440 x 2560">1440 x 2560</option>
+                          <option value="1080 x 1920">1080 x 1920</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <div
+                      class="alert alert-success"
+                      *ngIf="message != ''"
+                      role="alert"
+                    >
+                      <p class="mb-0">
+                        {{ message }}
+                      </p>
+                    </div>
+                    <div class="col-12">
+                      <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                      <button
+                        type="reset"
+                        (click)="goback()"
+                        class="btn btn-outline-warning mr-1 mb-1"
+                      >
+                        Annuler
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

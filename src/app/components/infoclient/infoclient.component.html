@@ -1,0 +1,101 @@
+<body
+  class="
+    vertical-layout vertical-menu-modern
+    2-columns
+    ecommerce-application
+    navbar-floating
+    footer-static
+    menu-collapsed
+  "
+  data-open="click"
+  data-menu="vertical-menu-modern"
+  data-col="2-columns"
+>
+  <div class="app-content content">
+    <div style="margin-top: 0px" class="content-wrapper">
+      <h6><i class="step-icon step feather icon-home"></i>Address</h6>
+      <fieldset class="checkout-step-2 px-0">
+        <section id="checkout-address" class="list-view product-checkout">
+          <div class="card">
+            <div class="card-header flex-column align-items-start">
+              <h4 class="card-title">Ajouter une nouvelle adresse</h4>
+              <p class="text-muted mt-25">
+                Assurez-vous de cocher « Livrer à cette adresse » lorsque vous
+                avez terminé
+              </p>
+            </div>
+            <form (ngSubmit)="insertcommande()">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label for="checkout-name">Nom complet:</label>
+                        <input
+                          type="text"
+                          id="checkout-name"
+                          class="form-control required"
+                          [(ngModel)]="info.fname"
+                          name="fname"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label for="checkout-number"
+                          >Numero de téléphone:</label
+                        >
+                        <input
+                          type="number"
+                          id="checkout-number"
+                          class="form-control required"
+                          [(ngModel)]="info.mnumber"
+                          name="mnumber"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label for="checkout-city">ville:</label>
+                        <input
+                          type="text"
+                          id="checkout-city"
+                          class="form-control required"
+                          [(ngModel)]="info.city"
+                          name="city"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label for="checkout-state">Adresse:</label>
+                        <input
+                          type="text"
+                          id="checkout-state"
+                          class="form-control required"
+                          [(ngModel)]="info.adress"
+                          name="adress"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 offset-md-6">
+                      <button
+                        type="submit"
+                        class="btn btn-primary delivery-address float-right"
+                      >
+                        ENREGISTRER ET LIVRER ICI
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </fieldset>
+    </div>
+  </div>
+</body>

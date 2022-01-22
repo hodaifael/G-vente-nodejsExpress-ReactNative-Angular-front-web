@@ -1,0 +1,108 @@
+<body
+  class="
+    vertical-layout vertical-menu-modern
+    2-columns
+    ecommerce-application
+    navbar-floating
+    footer-static
+    menu-collapsed
+  "
+  data-open="click"
+  data-menu="vertical-menu-modern"
+  data-col="2-columns"
+>
+  <div class="app-content content">
+    <div style="margin-top: 0px" class="content-wrapper">
+      <div class="content-header row">
+        <div class="content-header-left col-md-9 col-12 mb-2">
+          <div class="row breadcrumbs-top">
+            <div class="col-12">
+              <h2 class="content-header-title float-left mb-0">
+                Details commande : {{ prodId }}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-body">
+        <form
+          action="#"
+          class="icons-tab-steps checkout-tab-steps wizard-circle"
+        >
+          <fieldset class="checkout-step-1 px-0">
+            <section id="place-order" class="list-view product-checkout">
+              <div class="checkout-items">
+                <div *ngFor="let emp of products" class="card ecommerce-card">
+                  <div class="card-content">
+                    <div class="item-img text-center">
+                      <a href="app-ecommerce-details.html">
+                        <img
+                          src="{{ path }}{{ emp.image }}"
+                          alt="img-placeholder"
+                        />
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <div class="item-name">
+                        <p class="item-company">
+                          <span class="company-name">Description :</span>
+                          {{ emp.description }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Marque :</span>
+                          {{ emp.marque }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name"
+                            >Caracteristiques techniques :</span
+                          >
+                          {{ emp.caracteristiques_techniques }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Etat esthétique:</span>
+                          {{ emp.etat_esthetique }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Etat :</span>
+                          {{ emp.etat }}
+                        </p>
+                        <span></span><br />
+                      </div>
+                    </div>
+                    <div class="item-options text-center">
+                      <div class="item-wrapper">
+                        <div class="item-cost">
+                          <h6 class="item-price">{{ emp.prix }} €</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="checkout-options">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="detail">
+                        <div class="detail-title detail-total">Total</div>
+                        <div class="detail-amt total-amt">{{ total }} €</div>
+                      </div>
+                      <hr />
+                      <div class="btn btn-primary btn-block place-order">
+                        Valider
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

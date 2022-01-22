@@ -1,0 +1,70 @@
+marchand
+<div class="container-fluid">
+  <div style="top: 20px" class="app-content content">
+    <div class="row">
+      <div class="col-12 col-md-3"></div>
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Ajouter un admin</h4>
+          </div>
+          <br />
+          <div class="card-content">
+            <div class="card-body">
+              <form class="form form-vertical" (ngSubmit)="auth()">
+                <div class="form-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <div class="text-bold-600 font-medium-2">
+                          Nom d'utilisateur
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="user.username"
+                          name="username"
+                          placeholder="name"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <div class="text-bold-600 font-medium-2">Email</div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="user.email"
+                          name="email"
+                          placeholder="Email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <div class="text-bold-600 font-medium-2">
+                          Mot de passe
+                        </div>
+                        <input
+                          type="password"
+                          class="form-control"
+                          [(ngModel)]="user.password"
+                          name="password"
+                          placeholder="Password"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

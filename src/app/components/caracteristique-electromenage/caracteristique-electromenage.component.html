@@ -1,0 +1,188 @@
+<div class="container-fluid">
+  <div style="top: 20px" class="app-content content">
+    <div class="row">
+      <div class="col-12 col-md-3"></div>
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Nouveau produit</h4>
+          </div>
+          <br />
+          <div class="card-content">
+            <div class="card-body">
+              <form class="form form-vertical" (ngSubmit)="insertProduct()">
+                <div class="form-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical"
+                          >Dimension de l'écran</label
+                        >
+                        <select
+                          [(ngModel)]="prod.dimensionecran"
+                          name="dimensionecran"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="11">11 pouces</option>
+                          <option value="32">32 pouces</option>
+                          <option value="43">43 pouces</option>
+                          <option value="50">50 pouces</option>
+                          <option value="55">55 pouces</option>
+                          <option value="60">60 pouces</option>
+                          <option value="65">65 pouces</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="email-id-vertical"
+                              >Téchnologie d'affichage</label
+                            >
+                            <select
+                              [(ngModel)]="prod.technologieaffichage"
+                              name="technologieaffichage"
+                              class="select2-theme form-control"
+                              id="select2-theme"
+                            >
+                              <option value="LCD">LCD</option>
+                              <option value="LED">LED</option>
+                              <option value="QLED">QLED</option>
+                              <option value="OLED">OLED</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">Résolution</label>
+                        <select
+                          [(ngModel)]="prod.resolution"
+                          name="resolution"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="2">2k</option>
+                          <option value="4">4k</option>
+                          <option value="8">8k</option>
+                          <option value="720">720p</option>
+                          <option value="1440">1440p</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">Capacité (litres)</label>
+                        <select
+                          [(ngModel)]="prod.capacitel"
+                          name="capacitel"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="4">15L</option>
+                          <option value="5">20L</option>
+                          <option value="6">23L</option>
+                          <option value="7">25L</option>
+                          <option value="8">30L</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">Capacité (kg)</label>
+                        <select
+                          [(ngModel)]="prod.capacitek"
+                          name="capacitek"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="4">4 kg</option>
+                          <option value="5">5 kg</option>
+                          <option value="6">6 kg</option>
+                          <option value="7">7 kg</option>
+                          <option value="8">8 kg</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical"
+                          >Vitesse d'essorage (toures/min)</label
+                        >
+                        <select
+                          [(ngModel)]="prod.vitesse"
+                          name="vitesse"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="600">600</option>
+                          <option value="700">700</option>
+                          <option value="800">800</option>
+                          <option value="900">900</option>
+                          <option value="1100">1100</option>
+                          <option value="1200">1200</option>
+                          <option value="1300">1300</option>
+                          <option value="1400">1400</option>
+                          <option value="1500">1500</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">Puissance(watts)</label>
+                        <select
+                          [(ngModel)]="prod.puissance"
+                          name="puissance"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="750">750</option>
+                          <option value="800">800</option>
+                          <option value="1000">1000</option>
+                          <option value="1500">1500</option>
+                          <option value="2000">2000</option>
+                          <option value="2500">2500</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <div
+                      class="alert alert-success"
+                      *ngIf="message != ''"
+                      role="alert"
+                    >
+                      <p class="mb-0">
+                        {{ message }}
+                      </p>
+                    </div>
+                    <div class="col-12">
+                      <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                      <button
+                        type="reset"
+                        (click)="goback()"
+                        class="btn btn-outline-warning mr-1 mb-1"
+                      >
+                        Annuler
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

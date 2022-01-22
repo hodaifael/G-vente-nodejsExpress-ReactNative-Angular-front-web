@@ -1,0 +1,91 @@
+
+<div class="container-fluid " >
+<div style="top:20px;" class="app-content content">
+ 
+ <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">New Product</h4>
+                                </div>
+                                <br>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form class="form form-vertical" >
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="first-name-vertical">description</label>
+                                                                    <input type="text"  class="form-control" readonly="readonly" [(ngModel)]="prod.description" name="description" >
+                                                                </div>
+                                                            </div>
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="email-id-vertical">marque</label>
+                                                            <input type="text"  class="form-control"  readonly="readonly" [(ngModel)]="prod.marque" name="marque" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="email-id-vertical">etat</label>
+                                                            <input type="text"  class="form-control"  readonly="readonly" [(ngModel)]="prod.etat" name="etat" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="email-id-vertical">caracteristiques_techniques</label>
+                                                            <input type="text"  class="form-control"  readonly="readonly" [(ngModel)]="prod.caracteristiques_techniques" name="caracteristiques_techniques" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="email-id-vertical">etat_esthetique</label>
+                                                            <input type="text"  class="form-control"   readonly="readonly" [(ngModel)]="prod.etat_esthetique" name="etat_esthetique" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="email-id-vertical">type</label>
+                                                            <input type="text"  class="form-control"  readonly="readonly" [(ngModel)]="prod.type" name="type" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="email-id-vertical">prix</label>
+                                                            <input type="text"  class="form-control"  [(ngModel)]="prod.prix" name="prix" >
+                                                        </div>
+                                                    </div>
+                                                  
+                                               
+                                                    
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    
+                                                    
+                                                   <div class="alert alert-success" *ngIf='message !="" ' role="alert">
+                                                        <p class="mb-0">
+                                                        {{ message }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button (click)="editProduct()" class="btn btn-primary mr-1 mb-1">update prix</button>
+                                                        <button type="reset" routerLink="../../productenAttend" class="btn btn-outline-warning mr-1 mb-1">cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+      </div>
+     
+                            </div>
+                        

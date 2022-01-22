@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <div style="top: 20px" class="app-content content">
+    <div class="row">
+      <div class="col-12 col-md-3"></div>
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Nouveau produit</h4>
+          </div>
+          <br />
+          <div class="card-content">
+            <div class="card-body">
+              <form class="form form-vertical" (ngSubmit)="insertProduct()">
+                <div class="form-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical"
+                          >Technologie de connectivité</label
+                        >
+                        <select
+                          [(ngModel)]="prod.connectivite"
+                          name="connectivite"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="cellulaire">cellulaire</option>
+                          <option value="wifi">wifi</option>
+                          <option value="bluetooth">bluetooth</option>
+                          <option value="LTE">LTE</option>
+                          <option value="UMTS">UMTS</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="email-id-vertical"
+                              >Type d'alimentation</label
+                            >
+                            <select
+                              [(ngModel)]="prod.alimentation"
+                              name="alimentation"
+                              class="select2-theme form-control"
+                              id="select2-theme"
+                            >
+                              <option value="filaire">filaire</option>
+                              <option value="batterie ">batterie</option>
+                              <option value="piles">piles</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical"
+                          >Appareils compatibles</label
+                        >
+                        <select
+                          [(ngModel)]="prod.appareilscompatibles"
+                          name="appareilscompatibles"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="smartphone">smartphone</option>
+                          <option value="ordinateur">ordinateur</option>
+                          <option value="smarttv">smart tv</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div
+                      class="alert alert-success"
+                      *ngIf="message != ''"
+                      role="alert"
+                    >
+                      <p class="mb-0">
+                        {{ message }}
+                      </p>
+                    </div>
+                    <div class="col-12">
+                      <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                      <button
+                        type="reset"
+                        (click)="goback()"
+                        class="btn btn-outline-warning mr-1 mb-1"
+                      >
+                        Annuler
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

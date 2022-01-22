@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div style="top: 20px; font-size: 18px" class="app-content content">
+  
+    <section class="data-thumb-view-header">
+   
+      <div class="table-responsive">
+        <div
+          id="DataTables_Table_0_wrapper"
+          class="dataTables_wrapper dt-bootstrap4 no-footer"
+        >
+          <div class="top">
+            <div class="actions action-btns">
+              <div class="dt-buttons btn-group"></div>
+            </div>
+            <div class="action-filters"></div>
+          </div>
+          <div class="card">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Idcommande</th>
+                  <th>Nom complét</th>
+                  <th>Téléphone</th>
+                  <th>Ville</th>
+                  <th>Adresse</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let emp of products">
+                  <td class="product-name">{{ emp.id }}</td>
+                  <td class="product-name">{{ emp.fname }}</td>
+                  <td class="product-category">{{ emp.mnumber }}</td>
+
+                  <td class="product-price">{{ emp.city }}</td>
+                  <td class="product-price">{{ emp.adress }}</td>
+                  <td class="product-action">
+                    <a
+                      class="action-edit"
+                      routerLink="../detailsCommande/{{ emp.id }}"
+                      ><i class="fa fa-outdent" aria-hidden="true"></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+     
+    </section>
+   
+  </div>
+</div>
+
+

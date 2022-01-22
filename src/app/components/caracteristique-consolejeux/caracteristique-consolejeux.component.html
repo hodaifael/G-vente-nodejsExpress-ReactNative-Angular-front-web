@@ -1,0 +1,126 @@
+<div class="container-fluid">
+  <div style="top: 20px" class="app-content content">
+    <div class="row">
+      <div class="col-12 col-md-3"></div>
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Nouveau produit</h4>
+          </div>
+          <br />
+          <div class="card-content">
+            <div class="card-body">
+              <form class="form form-vertical" (ngSubmit)="insertProduct()">
+                <div class="form-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical"> Stokage </label>
+                        <select
+                          [(ngModel)]="prod.stokage"
+                          name="stokage"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="1700">32 GO</option>
+                          <option value="1700">64 GO</option>
+                          <option value="1700">128 GO</option>
+                          <option value="1700">256 GO</option>
+                          <option value="1700">500 GO</option>
+                          <option value="1500">1000 GO</option>
+                          <option value="1700">2000 GO</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">RAM</label>
+                        <select
+                          [(ngModel)]="prod.ram"
+                          name="ram"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value=""></option>
+                          <option value="12">2 GO</option>
+                          <option value="18">4 GO</option>
+                          <option value="20">8 GO</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="email-id-vertical">Alimentation</label>
+                            <select
+                              [(ngModel)]="prod.alimentation"
+                              name="alimentation"
+                              class="select2-theme form-control"
+                              id="select2-theme"
+                            >
+                              <option value="filaire">filaire</option>
+                              <option value="batterie ">batterie</option>
+                              <option value="piles">piles</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="email-id-vertical"
+                              >Téchnologie de communication</label
+                            >
+                            <select
+                              [(ngModel)]="prod.communicationwifi"
+                              name="communicationwifi"
+                              class="select2-theme form-control"
+                              id="select2-theme"
+                            >
+                              <option value="Wifi">Wifi</option>
+                              <option value="Blutouth ">Blutouth</option>
+                              <option value="Filaire">Filaire</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+
+                    <div
+                      class="alert alert-success"
+                      *ngIf="message != ''"
+                      role="alert"
+                    >
+                      <p class="mb-0">
+                        {{ message }}
+                      </p>
+                    </div>
+                    <div class="col-12">
+                      <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                      <button
+                        type="reset"
+                        (click)="goback()"
+                        class="btn btn-outline-warning mr-1 mb-1"
+                      >
+                        Annuler
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

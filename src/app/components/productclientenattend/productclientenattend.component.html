@@ -1,0 +1,125 @@
+<body
+  class="
+    vertical-layout vertical-menu-modern
+    2-columns
+    ecommerce-application
+    navbar-floating
+    footer-static
+    menu-collapsed
+  "
+  data-open="click"
+  data-menu="vertical-menu-modern"
+  data-col="2-columns"
+>
+  <div class="app-content content">
+    <div style="margin-top: 0px" class="content-wrapper">
+      <div style="margin-top: 0px" class="content-body">
+        <div id="DataTables_Table_0_filter" class="dataTables_filter">
+          <label
+            ><input
+              type="search"
+              class="form-control"
+              style="font-size: 18px; width: 300px"
+              [(ngModel)]="search"
+              (input)="searchByname()"
+              placeholder=""
+              aria-controls="DataTables_Table_0"
+          /></label>
+        </div>
+        <form
+          action="#"
+          class="icons-tab-steps checkout-tab-steps wizard-circle"
+        >
+          <!-- Checkout Place order starts -->
+          <fieldset style="margin-top: 60px" class="checkout-step-1 px-0">
+            <section id="place-order" class="list-view product-checkout">
+              <div class="checkout-items">
+                <div
+                  style="width: 1000px; margin-left: 60px"
+                  *ngFor="let emp of products"
+                  class="card ecommerce-card"
+                >
+                  <div class="card-content">
+                    <div class="item-img text-center">
+                      <a href="app-ecommerce-details.html">
+                        <img
+                          style="
+                            width: 200px;
+                            height: 200px;
+                            border-radius: 15px;
+                          "
+                          src="http://localhost:5000/assets/{{ emp.image }}"
+                          alt="img-placeholder"
+                        />
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <div class="item-name">
+                        <p class="item-company">
+                          <span class="company-name">Description :</span>
+                          {{ emp.description }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Marque :</span>
+                          {{ emp.marque }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name"
+                            >Caractéristiques Techniques :</span
+                          >
+                          {{ emp.caracteristiques_techniques }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Etat esthétique :</span>
+                          {{ emp.etat_esthetique }}
+                        </p>
+                        <span></span><br />
+                        <p class="item-company">
+                          <span class="company-name">Etat :</span>
+                          {{ emp.etat }}
+                        </p>
+                        <span></span><br />
+                        <div *ngIf="checkprix(emp.prix); else prixnull">
+                          <p class="item-company">
+                            <span class="company-name">Prix :</span>
+                            {{ emp.prix }}
+                          </p>
+                        </div>
+                        <ng-template #prixnull>
+                          <p class="item-company">
+                            <span class="company-name">Prix :</span> le prix
+                            n'est pas estime
+                          </p>
+                        </ng-template>
+                        <span></span><br />
+                      </div>
+                    </div>
+                    <div class="item-options text-center">
+                      <i
+                        style="margin-top: 60px; font-size: 120px"
+                        class="fa fa-clock-o fa-5x"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </fieldset>
+          <!-- Checkout Place order Ends -->
+
+          <!-- Checkout Customer Address Starts -->
+
+          <!-- Checkout Customer Address Ends -->
+
+          <!-- Checkout Payment Starts -->
+
+          <!-- Checkout Payment Starts -->
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

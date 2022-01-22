@@ -1,0 +1,118 @@
+<div class="app-content content">
+  <div style="margin-top: 0px" class="content-wrapper">
+    <div class="content-header row">
+      <div class="content-header-left col-md-9 col-12 mb-2">
+        <div class="row breadcrumbs-top">
+          <div class="col-12">
+            <h2 class="content-header-title float-left mb-0">Colissimo</h2>
+            <div class="breadcrumb-wrapper col-12">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active">Colissimo</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          content-header-right
+          text-md-right
+          col-md-3 col-12
+          d-md-block d-none
+        "
+      >
+        <div class="form-group breadcrum-right">
+          <div class="dropdown"></div>
+        </div>
+      </div>
+    </div>
+    <div class="content-body">
+      <section class="invoice-print mb-1">
+        <div class="row">
+          <fieldset class="col-12 col-md-5 mb-1 mb-md-0"></fieldset>
+          <div
+            class="
+              col-12 col-md-7
+              d-flex
+              flex-column flex-md-row
+              justify-content-end
+            "
+          >
+            <button class="btn btn-primary btn-print mb-1 mb-md-0">
+              <i class="feather icon-file-text"></i> Imprimer
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card invoice-page">
+        <div id="invoice-template" class="card-body">
+          <div class="col-sm-6 col-12 text-left pt-1">
+            <div class="media pt-1">
+              <qrcode
+                [qrdata]="myAngularxQrCode"
+                [width]="200"
+                [level]="'M'"
+              ></qrcode>
+            </div>
+          </div>
+
+          <div id="invoice-items-details" class="pt-1 invoice-items-table">
+            <div class="row">
+              <div class="table-responsive col-12">
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th>Adresse de l'expéditeur</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p>
+                          Numéro :
+                          ................................................................................................
+                        </p>
+                        <p>
+                          adress :
+                          ...............................................................................................
+                        </p>
+                        <p>
+                          Ville :
+                          ...............................................................................................
+                        </p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-responsive col-12">
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th>Adresse de destinataire</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p>Ouest de Paris</p>
+                        <p>5 AV de la Gare</p>
+                        <p>75016</p>
+                      </td>
+                    </tr>
+                    <tr></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

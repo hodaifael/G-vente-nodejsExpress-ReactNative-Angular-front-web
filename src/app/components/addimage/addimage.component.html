@@ -1,0 +1,19 @@
+<h1 style="text-align: center">Ajouter des images</h1>
+
+<hr />
+<div style="text-align: center">
+  <form>
+    <div>
+      <input
+        type="file"
+        name="images"
+        multiple
+        (change)="selectMultipleImage($event)"
+      />
+    </div>
+    <br />
+    <div>
+      <button type="submit" (click)="onMultipleSubmit()">Enregistrer</button>
+    </div>
+  </form>
+</div>

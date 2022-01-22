@@ -1,0 +1,305 @@
+marchand
+<div class="container-fluid">
+  <div style="top: 20px" class="app-content content">
+    <div class="row">
+      <div class="col-12 col-md-3"></div>
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Ajouter un produit de réferance</h4>
+          </div>
+          <br />
+          <div class="card-content">
+            <div class="card-body">
+              <form class="form form-vertical" (ngSubmit)="insertProduct()">
+                <div class="form-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">type</label>
+                        <select
+                          [(ngModel)]="prod.type"
+                          name="type"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="caract_tel">Téléphone</option>
+                          <option value="Consoles de jeux">
+                            Consoles de jeux
+                          </option>
+                          <option value="Objets connectes">
+                            Objets connectés
+                          </option>
+                          <option value="Gros electroménagers">
+                            Gros électroménagers
+                          </option>
+                          <option value="Bricolage">Bricolage</option>
+                          <option value="Ordinateurs">Ordinateurs</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="email-id-vertical">Déscription</label>
+                            <select
+                              [(ngModel)]="prod.description"
+                              name="description"
+                              class="select2-theme form-control"
+                              id="select2-theme"
+                            >
+                              <optgroup
+                                *ngIf="prod.type == 'caract_tel'"
+                                label="Téléphone"
+                              >
+                                <option value="Iphone12promax">
+                                  Iphone 12 pro max
+                                </option>
+                                <option value="iphone12">Iphone 12</option>
+                                <option value="Iphone11promax ">
+                                  Iphone 11 pro max
+                                </option>
+                                <option value="Iphone11 ">Iphone 11</option>
+                                <option value="IphoneX ">Iphone X</option>
+                                <option value="Iphone9 ">Iphone 9</option>
+                                <option value="Iphone8 ">Iphone 8</option>
+                                <option value="Iphone7 ">Iphone 7</option>
+                                <option value="Iphone6 ">Iphone 6</option>
+                                <option value="Samsung S20 ">
+                                  Samsung S20
+                                </option>
+                                <option value="Samsung S9 ">Samsung S9</option>
+                                <option value="Samsung S8 ">Samsung S8</option>
+                                <option value="Samsung S7 ">Samsung S7</option>
+                                <option value="Samsung S6 ">Samsung S6</option>
+                                <option value="Huawei p40 ">Huawei p40</option>
+                                <option value="Huawei p30 ">Huawei p30</option>
+                                <option value="Huawei p20 ">Huawei p20</option>
+                                <option value="Huawei p10 ">Huawei p10</option>
+                                <option value="Huawei p8 ">Huawei p8</option>
+                                <option value="Nokia G50 ">Nokia G50</option>
+                                <option value="Nokia G20 ">Nokia G20</option>
+                                <option value="Nokia G10 ">Nokia G10</option>
+                                <option value="Nokia X10 ">Nokia X10</option>
+                                <option value="Nokia X20 ">Nokia X20</option>
+                              </optgroup>
+                              <optgroup
+                                *ngIf="prod.type == 'Consoles de jeux'"
+                                label="Consoles de jeux"
+                              >
+                                <option value="Console de jeux portable">
+                                  Switch
+                                </option>
+                                <option value="Stationnaire console de jeu">
+                                  Playstation 5
+                                </option>
+                                <option value="Stationnaire console de jeu">
+                                  Playstation 4
+                                </option>
+                                <option value="Stationnaire console de jeu">
+                                  Playstation 3
+                                </option>
+                                <option value="Stationnaire console de jeu">
+                                  Playstation 2
+                                </option>
+                                <option value="Stationnaire console de jeu">
+                                  XBox 1
+                                </option>
+                              </optgroup>
+                              <optgroup
+                                *ngIf="prod.type == 'Objets connectes'"
+                                label="Objets connectés"
+                              >
+                                <option value="Montre">Montre</option>
+                                <option value="Casque/écouteurs">
+                                  Casque/écouteurs
+                                </option>
+                                <option value="eye casque de Réalité virtuelle">
+                                  Eye casque de Réalité virtuelle
+                                </option>
+                                <option value="Securite connecte">
+                                  Sécurité connecté
+                                </option>
+                              </optgroup>
+                              <optgroup
+                                *ngIf="prod.type == 'Gros electroménagers'"
+                                label="Gros électroménagers"
+                              >
+                                <option value="Tv">Tv</option>
+                                <option value="lave-linge">lave-linge</option>
+                                <option value="seche-linge">sèche-linge</option>
+                                <option value="Refrigerateur">
+                                  Réfrigérateur
+                                </option>
+                                <option value="seche-linge">
+                                  Four électrique
+                                </option>
+                                <option value="Refrigerateur">
+                                  Micro-ondes
+                                </option>
+                              </optgroup>
+                              <optgroup
+                                *ngIf="prod.type == 'Ordinateurs'"
+                                label="Ordinateurs"
+                              >
+                                <option value="Ordinateur bureautique">
+                                  Ordinateur bureautique
+                                </option>
+                                <option value="Ordinateur portable">
+                                  Ordinateur portable
+                                </option>
+                              </optgroup>
+
+                              <optgroup
+                                *ngIf="prod.type == 'Bricolage'"
+                                label="Bricolage"
+                              >
+                                <option value="Perceusevisseuse">
+                                  Perceuse visseuse
+                                </option>
+                                <option value="Marteaupiqueur">
+                                  Marteau piqueur
+                                </option>
+                                <option value="Marteauperforateur">
+                                  Marteau perforateur
+                                </option>
+                                <option value="MElangeurdepeintures">
+                                  Mélangeur de peintures
+                                </option>
+                              </optgroup>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">marque</label>
+                        <select
+                          [(ngModel)]="prod.marque"
+                          name="marque"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <optgroup
+                            *ngIf="prod.type == 'caract_tel'"
+                            label="Téléphone"
+                          >
+                            <option value="Apple">Apple</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Huawei">Huawei</option>
+                            <option value="Nokia">Nokia</option>
+                          </optgroup>
+                          <optgroup
+                            *ngIf="prod.type == 'Bricolage'"
+                            label="Bricolage"
+                          >
+                            <option value="bosch">Bosch</option>
+                            <option value="Brisunshine">Brisunshine</option>
+                            <option value="generique">Generique</option>
+                            <option value="huayt">Huayt</option>
+                          </optgroup>
+                          <optgroup
+                            *ngIf="prod.type == 'Consoles de jeux'"
+                            label="Consoles de jeux"
+                          >
+                            <option value="Nintendo">Nintendo</option>
+                            <option value="sony">sony</option>
+                            <option value="microsoft">microsoft</option>
+                          </optgroup>
+                          <optgroup
+                            *ngIf="prod.type == 'Objets connectes'"
+                            label="Objets connectés"
+                          >
+                            <option value="philips">philips</option>
+                            <option value="sony">sony</option>
+                            <option value="samsung">samsung</option>
+                          </optgroup>
+                          <optgroup
+                            *ngIf="prod.type == 'Ordinateurs'"
+                            label="Ordinateurs"
+                          >
+                            <option value="apple">Apple</option>
+                            <option value="acer">Acer</option>
+                            <option value="hp">HP</option>
+                            <option value="asus">Asus</option>
+                            <option value="msi">MSI</option>
+                          </optgroup>
+                          <optgroup
+                            *ngIf="prod.type == 'Gros electroménagers'"
+                            label="Gros électroménagers"
+                          >
+                            <option value="red">LG</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="SEB">SEB</option>
+                            <option value="hublot">BOSCH</option>
+                          </optgroup>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">Etat esthétique</label>
+                        <select
+                          [(ngModel)]="prod.etat_esthetique"
+                          name="etat_esthetique"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                        >
+                          <option value="aucun rayure">Aucune rayure</option>
+                          <option value="1 rayure">1 rayure</option>
+                          <option value="2 rayures">2 rayures</option>
+                          <option value="Plus de 3 rayures">
+                            Plus de 3 rayures
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="email-id-vertical">prix officiel</label>
+                        <input
+                          type="number"
+                          [(ngModel)]="prod.prixofficiel"
+                          name="prixofficiel"
+                          class="select2-theme form-control"
+                          id="select2-theme"
+                          placeholder="prix : "
+                        />
+                      </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+
+                    <div
+                      class="alert alert-success"
+                      *ngIf="message != ''"
+                      role="alert"
+                    >
+                      <p class="mb-0">
+                        {{ message }}
+                      </p>
+                    </div>
+                    <div class="col-12">
+                      <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                      <button
+                        type="reset"
+                        routerLink="../product"
+                        class="btn btn-outline-warning mr-1 mb-1"
+                      >
+                        Annuler
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
